@@ -3058,4 +3058,9 @@ ul.social li a.fa-google-plus:hover {
   .project-card p {
     margin-bottom: 1.2em;
   }
+
+  .project-card {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
 }
