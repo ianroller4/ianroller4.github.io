@@ -3063,4 +3063,8 @@ ul.social li a.fa-google-plus:hover {
     padding-right: 1em;
     padding-left: 1em;
   }
+
+  .image-column {
+    padding-right: 0;
+  }
 }
