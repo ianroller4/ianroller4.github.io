@@ -3040,4 +3040,22 @@ ul.social li a.fa-google-plus:hover {
   #footer {
     padding: 40px 0 20px 0;
   }
+
+  .project-card .row {
+    display: flex;
+    align-items: center;
+  }
+
+  .project-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .project-card h3 {
+    margin-bottom: 0.5em;
+  }
+
+  .project-card p {
+    margin-bottom: 1.2em;
+  }
 }
