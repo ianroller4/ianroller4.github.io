@@ -258,6 +258,10 @@ h3 {
   font-size: 1.35em;
 }
 
+h5 {
+  font-size: 0.9em;
+}
+
 a {
   color: #d52349;
   text-decoration: underline;
