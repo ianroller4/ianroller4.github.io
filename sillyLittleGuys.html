@@ -43,14 +43,27 @@
             <header>
               <h2>Silly Little Guys</h2>
             </header>
+            <p>
+              Silly Little Guys is a 2D action-adventure RTS created in the
+              Unity game engine. Players take command of small creatures called
+              Silly Little Guys to solve puzzles, fight enemies, and collect
+              parts to build a boat in order to escape the island they are
+              stranded on.
+            </p>
             <section style="margin-bottom: 1em">
               <h3>Project Overview</h3>
               <ul style="padding-left: 2em">
                 <li><strong>Role:</strong> Gameplay Designer and Programmer</li>
                 <li><strong>Engine:</strong> Unity</li>
-                <li><strong>Team Size:</strong> Four</li>
                 <li>
-                  <strong>Genre:</strong> Action / Adventure Real Time Strategy
+                  <strong>Team Size:</strong> Four, two artist students and two
+                  programmer students
+                </li>
+                <li><strong>Genre:</strong> Action-Adventure RTS</li>
+                <li>
+                  <strong>Pitch:</strong> Exiled to a strange island for your
+                  debts, you befriend little creatures to escape and return home
+                  for revenge
                 </li>
               </ul>
             </section>
@@ -69,16 +82,15 @@
                 <h4>Silly Little Guys</h4>
                 <section style="margin-bottom: 1em">
                   <h5>Design Goals</h5>
-                  <p style="font-size: 0.9em">
-                    The goal of the Silly Little Guys was to create a cute
-                    creature that players will use to attack enemies, complete
-                    puzzles, and complete various tasks that the player
-                    themselves cannot do themselves.
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    Create a creature that players could command to fight
+                    enemies, complete puzzles, and interact with the environment
+                    in ways the player character cannot.
                   </p>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Inspiration</h5>
-                  <p style="font-size: 0.9em">
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
                     The idea for the Silly Little Guys and the game as a whole
                     was heavily inspired by the Nintendo series
                     <a
@@ -91,20 +103,22 @@
                       href="https://store.steampowered.com/app/1599020/Tinykin/"
                       target="_blank"
                       >Tinykin</a
-                    >. and
+                    >
+                    and
                     <a
                       href="https://store.steampowered.com/app/1093290/The_Wild_at_Heart/"
                       target="_blank"
                       >The Wild at Heart</a
-                    >. I grew up playing real time strategy games and fell in
-                    love with this take on the genre, instead of an overhead
-                    view you take control of a character that is on the
-                    battlefield. That is with the key difference that you still
-                    cannot do anything directyly yourself, you must command your
-                    units to complete the various tasks. This creates the
-                    feeling of a general on the front line guiding your troops.
+                    >. I grew up playing RTS games and this variation of the
+                    genre grabbed my attention in particular. In this variation
+                    the perspective shifts from a bird eye view to the
+                    perspective of the player character. This results in a
+                    feeling of acting as a general on the front lines rather
+                    than a god seeing everything once. This perspective gives
+                    the player a limited view of the world and adds to the
+                    challenges they must face.
                   </p>
-                  <p style="font-size: 0.9em">
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
                     With the exception of The Wild at Heart, games of this genre
                     are always 3D. I have always wanted to try adapting the
                     genre to a 2D setting and figure out how the various
@@ -123,44 +137,166 @@
                     </li>
                     <li>
                       Silly Little Guys limit can be increased by defeating
-                      enemies and collect special item drop
+                      enemies and collecting a special item drop
                     </li>
                   </ul>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Iteration</h5>
-                  <p style="font-size: 0.9em">
-                    How the design improved over time and why changes were made
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    The mechanics of the Silly Little Guys stayed mostly the
+                    same once implemented. What did change was how they moved
+                    around and how they looked when doing so.
+                  </p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    Initially, the Silly Little Guys would simply move towards a
+                    point behind the player when following. This caused them to
+                    push each other, bunch together, and overall look very
+                    unorganized. When carrying an object they would surround the
+                    object and then move with it. However, the object did not
+                    look like it was actually being carried and thus breaking
+                    the players immersion.
+                  </p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    In the final version, each Silly Little Guys is assigned a
+                    specific spot in the formation behind the player. This
+                    creates a more ordered and cohesive group when moving
+                    around. The carrying problem was fixed by making each Silly
+                    Little Guy face the center of the object they are carrying.
+                    As a result, the object appears to be actually carried by
+                    the Silly Little Guys.
                   </p>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Implementation</h5>
-                  <p style="font-size: 0.9em">How it was done technically</p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    To navigate around the map the Silly Little Guys use Unity's
+                    nav mesh system modified using this
+                    <a href="https://github.com/h8man/NavMeshPlus"
+                      >GitHub Repo</a
+                    >
+                    to allow for nav mesh use with tilemaps. When it comes to
+                    how they function and make choices the Silly Little Guys use
+                    a state machine. Their states and how they operate are as
+                    follows:
+                  </p>
+                  <ul style="font-size: 0.9em; padding-left: 2em">
+                    <li>
+                      <strong>Idle:</strong> Stand still and look for nearby
+                      enemies or items to carry. If an enemy or item is nearby
+                      change to attack or carry state respectively.
+                    </li>
+                    <li>
+                      <strong>Follow:</strong> Follow the player by constantly
+                      moving to their assigned spot in the following group
+                      behind the player.
+                    </li>
+                    <li>
+                      <strong>Held:</strong> Disable nav agent and collisions
+                      and set position to held position next to player
+                      character. Upon throw button release change to thrown
+                      state.
+                    </li>
+                    <li>
+                      <strong>Thrown:</strong> Move along path to target. Path
+                      is simulated to appear three-dimensional in a
+                      two-dimensional environment. Upon reaching target change
+                      to idle state.
+                    </li>
+                    <li>
+                      <strong>Dismiss:</strong> Move to nearby spot with respect
+                      to player and change to idle state.
+                    </li>
+                    <li>
+                      <strong>Attack:</strong> If enemy is close enough change
+                      animation to look at enemy and attack. If enemy is not
+                      close enough move towards enemy. If enemy is defeated
+                      change to idle. If Silly Little Guy defeated play death
+                      animation.
+                    </li>
+                    <li>
+                      <strong>Carry:</strong> Move to spot located around
+                      object. Adjust animation to always have Silly Little Guys
+                      face the object.
+                    </li>
+                  </ul>
                 </section>
               </section>
               <section style="margin-bottom: 1em">
                 <h4>Button Puzzle</h4>
                 <section style="margin-bottom: 1em">
                   <h5>Design Goals</h5>
-                  <p style="font-size: 0.9em">What you are trying to design</p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    The goal of the button puzzle was to create a simple puzzle
+                    that requires the player to use the Silly Little Guys and
+                    for player to notice the environment and how they can affect
+                    it.
+                  </p>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Inspiration</h5>
-                  <p style="font-size: 0.9em">Where the idea came from</p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    The puzzle was inspired by puzzles found in
+                    <a
+                      href="https://www.nintendo.com/en-ca/store/products/pikmin-1-2-118697/?srsltid=AfmBOorKWkcBu75IxH4NvvXtkYeGuduoqS1nrWYXux-Mr05qVuYru5DM"
+                      target="_blank"
+                      >Pikmin</a
+                    >
+                    and
+                    <a
+                      href="https://store.steampowered.com/app/1599020/Tinykin/"
+                      target="_blank"
+                      >Tinykin</a
+                    >. Puzzles in these games rely on players identifying hints
+                    in their surroundings and using their units to solve it.
+                  </p>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>System Design</h5>
-                  <p style="font-size: 0.9em">How it works</p>
+                  <ul style="font-size: 0.9em; padding-left: 2em">
+                    <li>Buttons are unpressed on default</li>
+                    <li>
+                      Buttons are pressed when the player or a Silly Little Guys
+                      is on top and becomes unpressed when they leave.
+                    </li>
+                    <li>
+                      If buttons are pressed and held in the right order a door
+                      will open.
+                    </li>
+                  </ul>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Iteration</h5>
-                  <p style="font-size: 0.9em">
-                    How the design improved over time and why changes were made
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    Functionality of the buttons stayed the same throughout
+                    development. What did change was how the puzzle and its
+                    solution was communicated to the player.
+                  </p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    Through initial playtests we realized that it was not clear
+                    that buttons were pressed and what order they should be
+                    pressed in. To fix this we added sound effects and
+                    additional animations to demonstrate when the button is
+                    pressed and when it is unpressed. In addition, the
+                    environment was updated to better hint to the player what
+                    the solution is.
                   </p>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Implementation</h5>
-                  <p style="font-size: 0.9em">How it was done technically</p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    The buttons themselves are a simple collision trigger that
+                    upon a player or Silly Little Guy entering will set the
+                    state of the button to pressed and add the button to the
+                    pressed order list, and upon exiting the area the button
+                    will be unpressed and be removed from the list.
+                  </p>
+                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                    To check the players solution the pressed list is compared
+                    to the solution list. If the lists are identical, taking
+                    order into account, the puzzle is solved and the door is
+                    told to open.
+                  </p>
                 </section>
               </section>
             </section>
