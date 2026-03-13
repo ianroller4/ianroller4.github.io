@@ -261,6 +261,9 @@ h3 {
 h5 {
   font-size: 0.9em;
 }
+h6 {
+  font-size: 0.85em;
+}
 
 a {
   color: #d52349;

@@ -43,24 +43,37 @@
             <header>
               <h2>Gob Baby Go-Bags</h2>
             </header>
+            <p>
+              Gob Baby Go-Bags is a 2D arcade platformer created in the Unity
+              game engine. Players take control of a character that cannot deal
+              damage themselves. They must instead collect Gob babies and throw
+              them at the endless horde of enemies that pursue you to survive.
+              This game was made over the course of three days for the 2026
+              Winnipeg Game Jam.
+            </p>
             <section style="margin-bottom: 1em">
               <h3>Project Overview</h3>
               <ul style="padding-left: 2em">
-                <li><strong>Role:</strong> Gameplay Designer and Programmer</li>
-                <li><strong>Engine:</strong> Unity</li>
-                <li><strong>Team Size:</strong> Four</li>
                 <li>
-                  <strong>Genre:</strong> Action / Adventure Real Time Strategy
+                  <strong>Role:</strong> Gameplay Designer and Lead Programmer
                 </li>
+                <li><strong>Engine:</strong> Unity</li>
+                <li>
+                  <strong>Team Size:</strong> Four, one artist and one full-time
+                  programmer and two part-time programmers
+                </li>
+                <li><strong>Genre:</strong> 2D Arcade Platformer</li>
+                <li><strong>Pitch:</strong> Game Pitch</li>
               </ul>
             </section>
             <section style="margin-bottom: 1em">
               <h3>My Contributions</h3>
               <ul style="padding-left: 2em">
-                <li>Silly Little Guys behaviour, pathfinding, and design</li>
-                <li>Story and narrative</li>
-                <li>Level design</li>
-                <li>Puzzle design</li>
+                <li>Player controller</li>
+                <li>Gob babies</li>
+                <li>Gameplay Flow</li>
+                <li>Actor spawning</li>
+                <li>Teleporters</li>
               </ul>
             </section>
             <section style="margin-bottom: 1em">
@@ -69,55 +82,215 @@
                 <h4>Player Movement / Control</h4>
                 <section style="margin-bottom: 0">
                   <h5>Design Goals</h5>
-                  <p style="font-size: 0.9em">What you are trying to design</p>
-                </section>
-                <section style="margin-bottom: 0">
-                  <h5>Inspiration</h5>
-                  <p style="font-size: 0.9em">Where the idea came from</p>
-                </section>
-                <section style="margin-bottom: 0">
-                  <h5>System Design</h5>
-                  <p style="font-size: 0.9em">How it works</p>
-                </section>
-                <section style="margin-bottom: 0">
-                  <h5>Iteration</h5>
                   <p style="font-size: 0.9em">
-                    How the design improved over time and why changes were made
+                    Develop and design a player controller that leaves the
+                    player having fun and satisfied simply moving the player
+                    around in the world.
                   </p>
                 </section>
                 <section style="margin-bottom: 0">
-                  <h5>Implementation</h5>
-                  <p style="font-size: 0.9em">How it was done technically</p>
-                </section>
-              </section>
-              <section style="margin-bottom: 0">
-                <h4>Gameplay Flow</h4>
-                <section style="margin-bottom: 0">
-                  <h5>Design Goals</h5>
-                  <p style="font-size: 0.9em">What you are trying to design</p>
-                </section>
-                <section style="margin-bottom: 0">
                   <h5>Inspiration</h5>
-                  <p style="font-size: 0.9em">Where the idea came from</p>
-                </section>
-                <section style="margin-bottom: 0">
-                  <h5>System Design</h5>
-                  <p style="font-size: 0.9em">How it works</p>
-                </section>
-                <section style="margin-bottom: 0">
-                  <h5>Iteration</h5>
                   <p style="font-size: 0.9em">
-                    How the design improved over time and why changes were made
+                    After playing
+                    <a href="https://hollowknightsilksong.com/" target="_blank"
+                      >Hollow Knight: Silksong</a
+                    >
+                    I was inspired by the smooth movement Team Cherry was able
+                    to achieve. So after my Game Jam team decided we would make
+                    a 2D platformer I immedietly knew I wanted to try my hand at
+                    developing a player controller that simply felt good to
+                    control.
                   </p>
                 </section>
                 <section style="margin-bottom: 0">
+                  <h5>System Design</h5>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div
+                      class="col-4 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        Players move left and right. Camera has look ahead
+                        feature to see more in front of player.
+                      </p>
+
+                      <img
+                        src="images/SLGTree.png"
+                        alt="Move left and right with look ahead"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 2 -->
+                    <div
+                      class="col-4 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        Player jump height is adjustable based on how long jump
+                        button is held.
+                      </p>
+
+                      <img
+                        src="images/SLGCarry.png"
+                        alt="Jump height based on how long jump button is held"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 3 -->
+                    <div
+                      class="col-4 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">Players have coyote time.</p>
+
+                      <img
+                        src="images/SLGOrange.png"
+                        alt="Coyote Time"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <section style="margin-bottom: 0">
                   <h5>Implementation</h5>
-                  <p style="font-size: 0.9em">How it was done technically</p>
+                  <p style="margin-bottom: 0.5em">
+                    The player controller is implemented using a combination of
+                    Unity's Rigidbody2D system with custom code for jumping /
+                    gravity and collision detection. All settings for
+                    controlling the movement system are implemented in a
+                    scriptable object for easier adjusting of settings.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    Horizontal movement is controlled by adjusting the
+                    Rigidbody2D's velocity value. This value is lerped between 0
+                    and the max movement speed (walking or running). The speed
+                    at which the velocity increases or decreases is based on
+                    acceleration and deceleration values set in the movement
+                    settings scriptable object.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    The jumping / gravity system is controlled through custom
+                    code rather than the Rigidbody2D to enable the system to
+                    have more control of its jumps. By doing it this way
+                    mechanics such as jump buffering, coyote time, and a
+                    variable jump height are easier to implement. Settings for
+                    the different jumping mechanics are found in the movement
+                    settings scriptable object.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    Ground and head collisions are implemented seperate from
+                    Unity's collision components. BoxCasts are used to determine
+                    if the player is grounded or colliding with a ceiling. This
+                    helps with implementing the custom jump mechanics by
+                    allowing the system to determine if they are grounded or
+                    not.
+                  </p>
+                  <h6>Movement Features</h6>
+                  <ul style="font-size: 0.85em; padding-left: 2em">
+                    <li>
+                      <strong>Acceleration Based Horizontal Movement:</strong>
+                      Results in smoother movement that looks and feels better
+                      to control
+                    </li>
+                    <li>
+                      <strong>Jump Buffering:</strong> Improves jump input
+                      responsiveness
+                    </li>
+                    <li>
+                      <strong>Coyote Time:</strong> Allows a jump shortly after
+                      leaving a platform
+                    </li>
+                    <li>
+                      <strong>Variable Jump Height:</strong> Holding the jump
+                      button allows for a higher jump
+                    </li>
+                    <li>
+                      <strong>Apex Hang Time:</strong> Players stay at peak of
+                      jump for some time. Helps with game feel
+                    </li>
+                  </ul>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>Iteration of Player Movement</h5>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                        Initially, with the various movement settings just set
+                        to their defaults, the player felt akward to control.
+                        Jumping is too quick, movement speed does not match how
+                        quick they do other things, and overall does not feel
+                        good to control.
+                      </p>
+
+                      <img
+                        src="images/OldSLGFollow.gif"
+                        alt="Initial player movement"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 2 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                        In the final version, after playing around with the
+                        various movement settings, the player moves around the
+                        level a lot smoother and feels better to control.
+                      </p>
+
+                      <img
+                        src="images/NewSLGFollow.gif"
+                        alt="Final player movement"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                  </div>
                 </section>
               </section>
             </section>
             <section style="margin-bottom: 1em">
               <h3>Post Mortem</h3>
+              <section style="margin-bottom: 1em">
+                <h4>What Went Well</h4>
+                <p>
+                  Describe the systems, mechanics, or parts of development that
+                  worked particularly well in the project.
+                </p>
+              </section>
+
+              <section style="margin-bottom: 1em">
+                <h4>Challenges</h4>
+                <p>
+                  Discuss difficulties encountered during development, such as
+                  balancing, technical limitations, or design problems
+                  discovered during testing.
+                </p>
+              </section>
+              <section style="margin-bottom: 1em">
+                <h4>What I Learned</h4>
+                <p>
+                  Reflect on lessons gained from the project. This could include
+                  insights about game design, player behavior, iteration, or
+                  development workflow.
+                </p>
+              </section>
+
+              <section style="margin-bottom: 1em">
+                <h4>Future Improvements</h4>
+                <p>
+                  Explain what you would improve or expand if development
+                  continued. This demonstrates forward-thinking design.
+                </p>
+              </section>
             </section>
             <section style="margin-bottom: 1em">
               <h3>Play It Now!</h3>
