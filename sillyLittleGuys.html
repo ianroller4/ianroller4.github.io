@@ -128,44 +128,49 @@
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>System Design</h5>
-                  <ul style="font-size: 0.9em; padding-left: 2em">
-                    <li>Players spawn Silly Little Guys by shaking tree</li>
-                    <li>
-                      Players use Silly Little Guys to collect boat parts,
-                      defeat enemies, and complete puzzles by throwing them at
-                      the problems
-                    </li>
-                    <li>
-                      Silly Little Guys limit can be increased by defeating
-                      enemies and collecting a special item drop
-                    </li>
-                  </ul>
-                </section>
-                <section style="margin-bottom: 1em">
-                  <h5>Iteration</h5>
-                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
-                    The mechanics of the Silly Little Guys stayed mostly the
-                    same once implemented. What did change was how they moved
-                    around and how they looked when doing so.
-                  </p>
-                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
-                    Initially, the Silly Little Guys would simply move towards a
-                    point behind the player when following. This caused them to
-                    push each other, bunch together, and overall look very
-                    unorganized. When carrying an object they would surround the
-                    object and then move with it. However, the object did not
-                    look like it was actually being carried and thus breaking
-                    the players immersion.
-                  </p>
-                  <p style="font-size: 0.9em; margin-bottom: 0.5em">
-                    In the final version, each Silly Little Guys is assigned a
-                    specific spot in the formation behind the player. This
-                    creates a more ordered and cohesive group when moving
-                    around. The carrying problem was fixed by making each Silly
-                    Little Guy face the center of the object they are carrying.
-                    As a result, the object appears to be actually carried by
-                    the Silly Little Guys.
-                  </p>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        Players spawn Silly Little Guys by shaking trees located
+                        throughout the level.
+                      </p>
+
+                      <img
+                        src="images/SLGTree.png"
+                        alt="Spawning Silly Little Guys"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 2 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        Silly Little Guys can be thrown at enemies, puzzles, and
+                        boat parts to complete tasks.
+                      </p>
+
+                      <img
+                        src="images/SLGCarry.png"
+                        alt="Silly Little Guys carry a boat part"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 3 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        Increase Silly Little Guy limit by collecting special
+                        orange pick ups!
+                      </p>
+
+                      <img
+                        src="images/SLGOrange.png"
+                        alt="Increasing squad size"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+                  </div>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Implementation</h5>
@@ -220,6 +225,47 @@
                       face the object.
                     </li>
                   </ul>
+                  <img
+                    src="images/SLG_States.png"
+                    alt="Silly Little Guys state diagram"
+                    style="width: 100%; height: auto"
+                  />
+                </section>
+                <section style="margin-bottom: 1em">
+                  <h5>Iteration of Silly Little Guy Following</h5>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div class="col-6 col-12-small">
+                      <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                        Initially, the Silly Little Guys would simply move
+                        towards a point behind the player when following. This
+                        caused them to push each other and overall look very
+                        unorganized.
+                      </p>
+
+                      <img
+                        src="images/OldSLGFollow.gif"
+                        alt="Old Silly Little Guys follow"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 2 -->
+                    <div class="col-6 col-12-small">
+                      <p style="font-size: 0.9em; margin-bottom: 0.5em">
+                        In the final version, each Silly Little Guys is assigned
+                        a specific spot in the formation behind the player. This
+                        creates a more ordered and cohesive group when moving
+                        around.
+                      </p>
+
+                      <img
+                        src="images/NewSLGFollow.gif"
+                        alt="New Silly Little Guys follow"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+                  </div>
                 </section>
               </section>
               <section style="margin-bottom: 1em">
@@ -253,21 +299,48 @@
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>System Design</h5>
-                  <ul style="font-size: 0.9em; padding-left: 2em">
-                    <li>Buttons start in an unpressed state</li>
-                    <li>
-                      Buttons are pressed when either the player or a Silly
-                      Little Guy stands on them.
-                    </li>
-                    <li>
-                      Buttons are unpressed when neither the player or a Silly
-                      Little Guys is on them.
-                    </li>
-                    <li>
-                      If the buttons are activated in the correct sequence, the
-                      boss arena door opens.
-                    </li>
-                  </ul>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        Buttons start in an unpressed state
+                      </p>
+
+                      <img
+                        src="images/SLG_ButtonUnpressed.png"
+                        alt="Button unpressed state"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 2 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        Buttons are pressed when either the player or a Silly
+                        Little Guy stands on them.
+                      </p>
+
+                      <img
+                        src="images/SLG_ButtonPressed.png"
+                        alt="Button pressed state"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+
+                    <!-- SECTION 3 -->
+                    <div class="col-4 col-12-small">
+                      <p style="font-size: 0.9em">
+                        If the buttons are activated in the correct sequence,
+                        the boss arena door opens.
+                      </p>
+
+                      <img
+                        src="images/SLG_PuzzleSolved.gif"
+                        alt="Puzzle solved"
+                        style="width: 100%; height: auto"
+                      />
+                    </div>
+                  </div>
                 </section>
                 <section style="margin-bottom: 1em">
                   <h5>Iteration</h5>
