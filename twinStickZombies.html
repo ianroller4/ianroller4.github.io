@@ -1,0 +1,318 @@
+<!doctype html>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Twin Stick Zombies</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <section id="header">
+        <!-- Logo -->
+        <h1><a href="index.html">Ian Roller</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li class="current"><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Main -->
+      <section id="main">
+        <div class="container">
+          <!-- Content -->
+          <article class="box post">
+            <a href="#" class="image featured"
+              ><img src="images/pic01.jpg" alt=""
+            /></a>
+            <header>
+              <h2>Twin Stick Zombies</h2>
+            </header>
+            <p>
+              Twin Stick Zombies is a 3D Twin Stick Shooter Survival game
+              created in Unreal Engine using Unreal Blueprints. Twin Stick
+              Zombies was created for an assignment for RRC Polytech's Game
+              Development program. For this assignment we followed Epics twin
+              stick shooter tutorial and then added our own spin on the genre.
+              These additions are inspired by the Zombie modes in
+              <a
+                href="https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/"
+                target="_blank"
+                >Call of Duty</a
+              >. Important to note that the game is unfinished and is simply a
+              prototype of the newly added mechanics.
+            </p>
+            <section style="margin-bottom: 1em">
+              <h3>Project Overview</h3>
+              <ul style="padding-left: 2em">
+                <li><strong>Role:</strong> Gameplay Designer and Programmer</li>
+                <li><strong>Engine:</strong> Unreal Engine</li>
+                <li><strong>Team Size:</strong> Solo project</li>
+                <li><strong>Genre:</strong> Twin Stick Shooter Survival</li>
+                <li>
+                  <strong>Pitch:</strong> Survive endless hordes of zombies.
+                </li>
+              </ul>
+            </section>
+            <section style="margin-bottom: 1em">
+              <h3>My Contributions</h3>
+              <ul style="padding-left: 2em">
+                <li>Round Based Wave System</li>
+                <li>Upgrade and Currency System</li>
+                <li>Ammo System</li>
+              </ul>
+            </section>
+            <section style="margin-bottom: 1em">
+              <h3>Design Breakdown</h3>
+              <section style="margin-bottom: 0">
+                <h4>Round Based Wave System</h4>
+                <section style="margin-bottom: 0">
+                  <h5>Design Goals</h5>
+                  <p style="font-size: 0.9em">
+                    Create a gradually increasing challenge to keep players
+                    engaged.
+                  </p>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>Inspiration</h5>
+                  <p style="font-size: 0.9em">
+                    In
+                    <a
+                      href="https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/"
+                      target="_blank"
+                      >Call of Duty: Zombies</a
+                    >, zombies spawn in rounds. Each round the number of zombies
+                    increase with a max amount that can be in the field at a
+                    single time.
+                  </p>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>System Design</h5>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        The player fights enemies as they spawn.
+                      </p>
+                      <img
+                        src="images/TWZ_PlayerFights.gif"
+                        alt="Player fights horde of enemies"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                    <!-- SECTION 2 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        A new round starts and enemies begin to spawn again.
+                      </p>
+                      <img
+                        src="images/TWZ_NewRound.gif"
+                        alt="Round increases and enemies spawn again"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>Implementation</h5>
+                  <p style="margin-bottom: 0.5em"></p>
+                  <div
+                    style="
+                      position: relative;
+                      width: 100%;
+                      height: 0;
+                      padding-bottom: 60%;
+                    "
+                  >
+                    <iframe
+                      src="https://blueprintue.com/render/26r6-l1k/"
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                      "
+                      allowfullscreen
+                    >
+                    </iframe>
+                  </div>
+                </section>
+              </section>
+              <section style="margin-bottom: 0">
+                <h4>Upgrade and Currency Systems</h4>
+                <section style="margin-bottom: 0">
+                  <h5>Design Goals</h5>
+                  <p style="font-size: 0.9em">
+                    To balance the ever increasing challenges of the rounds
+                    system, players have access to health and damage upgrades.
+                    Players purchase these upgrades by spending the points they
+                    earned by killing enemies.
+                  </p>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>Inspiration</h5>
+                  <p style="font-size: 0.9em">
+                    In
+                    <a
+                      href="https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/"
+                      target="_blank"
+                      >Call of Duty: Zombies</a
+                    >, players earn currency when defeating zombies. Players can
+                    then use this currency to buy upgrades that affect various
+                    parts of the gameplay.
+                  </p>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>System Design</h5>
+                  <div class="row">
+                    <!-- SECTION 1 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        Player buys upgrade and increases attribute.
+                      </p>
+                      <img
+                        src="images/TWZ_PlayerUpgrades.gif"
+                        alt="Player buys upgrade"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                    <!-- SECTION 2 -->
+                    <div
+                      class="col-6 col-12-small"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <p style="font-size: 0.9em">
+                        Price is increased and player can no longer buy the
+                        upgrade.
+                      </p>
+                      <img
+                        src="images/TWZ_NewRound.gif"
+                        alt="Price increases"
+                        style="width: 100%; height: auto; margin-top: auto"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <section style="margin-bottom: 0">
+                  <h5>Implementation</h5>
+                  <p style="margin-bottom: 0.5em"></p>
+                  <div
+                    style="
+                      position: relative;
+                      width: 100%;
+                      height: 0;
+                      padding-bottom: 60%;
+                    "
+                  >
+                    <iframe
+                      src="https://blueprintue.com/render/arxzgdw9/"
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                      "
+                      allowfullscreen
+                    >
+                    </iframe>
+                  </div>
+                </section>
+              </section>
+            </section>
+            <section style="margin-bottom: 1em">
+              <h3>Post Mortem</h3>
+              <section style="margin-bottom: 1em">
+                <h4>What Went Well</h4>
+                <p>
+                  Describe the systems, mechanics, or parts of development that
+                  worked particularly well in the project.
+                </p>
+              </section>
+
+              <section style="margin-bottom: 1em">
+                <h4>Challenges</h4>
+                <p>
+                  Discuss difficulties encountered during development, such as
+                  balancing, technical limitations, or design problems
+                  discovered during testing.
+                </p>
+              </section>
+              <section style="margin-bottom: 1em">
+                <h4>What I Learned</h4>
+                <p>
+                  Reflect on lessons gained from the project. This could include
+                  insights about game design, player behavior, iteration, or
+                  development workflow.
+                </p>
+              </section>
+
+              <section style="margin-bottom: 1em">
+                <h4>Future Improvements</h4>
+                <p>
+                  Explain what you would improve or expand if development
+                  continued. This demonstrates forward-thinking design.
+                </p>
+              </section>
+            </section>
+            <section style="margin-bottom: 1em">
+              <h3>Play It Now!</h3>
+            </section>
+          </article>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Copyright -->
+              <div id="copyright">
+                <ul class="links">
+                  <li>&copy; Untitled. All rights reserved.</li>
+                  <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
