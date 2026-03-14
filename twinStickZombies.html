@@ -81,6 +81,11 @@
               <h3>Design Breakdown</h3>
               <section style="margin-bottom: 0">
                 <h4>Round Based Wave System</h4>
+                <p class="system-summary">
+                  Enemies spawn in waves with the amount of enemies to spawn and
+                  their strength dependent on the current round. Higher rounds
+                  result in stronger and more enemies.
+                </p>
                 <section style="margin-bottom: 0">
                   <h5>Design Goals</h5>
                   <p style="font-size: 0.9em">
@@ -136,7 +141,24 @@
                 </section>
                 <section style="margin-bottom: 0">
                   <h5>Implementation</h5>
-                  <p style="margin-bottom: 0.5em"></p>
+                  <p style="margin-bottom: 0.5em">
+                    Whenever spawn enemy is called a series of checks are
+                    performed to determine if another enemy should be spawned or
+                    if the next round should start. The process can be seen in
+                    the following chart.
+                  </p>
+                  <img
+                    src="images/SpawningFlowChart.png"
+                    alt="Spawning check flow chart"
+                    style="
+                      width: 50%;
+                      height: auto;
+                      margin-top: auto;
+                      margin-left: auto;
+                      margin-right: auto;
+                      display: block;
+                    "
+                  />
                   <div
                     style="
                       position: relative;
@@ -163,6 +185,14 @@
               </section>
               <section style="margin-bottom: 0">
                 <h4>Upgrade and Currency Systems</h4>
+                <p class="system-summary">
+                  Players earn points by killing enemies. These points can then
+                  be spent on upgrades to health and damage, as well as, buying
+                  more ammo. When an upgrade is purchased the price increases to
+                  create a simple scaling progression system that prevents the
+                  player from becoming overpowered and thus keeping the game
+                  interesting.
+                </p>
                 <section style="margin-bottom: 0">
                   <h5>Design Goals</h5>
                   <p style="font-size: 0.9em">
@@ -194,7 +224,8 @@
                       style="display: flex; flex-direction: column"
                     >
                       <p style="font-size: 0.9em">
-                        Player buys upgrade and increases attribute.
+                        Player spends points at a stand to increase an attribute
+                        such as health or damage.
                       </p>
                       <img
                         src="images/TWZ_PlayerUpgrades.gif"
@@ -208,8 +239,8 @@
                       style="display: flex; flex-direction: column"
                     >
                       <p style="font-size: 0.9em">
-                        Price is increased and player can no longer buy the
-                        upgrade.
+                        After each purchase the price increases, limiting how
+                        quickly player can increase their strength.
                       </p>
                       <img
                         src="images/TWZ_NewRound.gif"
@@ -221,7 +252,48 @@
                 </section>
                 <section style="margin-bottom: 0">
                   <h5>Implementation</h5>
-                  <p style="margin-bottom: 0.5em"></p>
+                  <p style="margin-bottom: 0.5em">
+                    Each upgrade stand consists of three main components: a
+                    static mesh representing the stand itself, a collision
+                    trigger used to detect if the player is within interaction
+                    range, and a text render to display the current price of the
+                    upgrade and which upgrade the stand is for.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    The collision trigger handles enabling and disabling player
+                    interaction with the stand. If the player is enters the
+                    trigger, the stand will enable input and allow purchasing of
+                    the upgrade. If the player exits the trigger area, the input
+                    is disabled thus blocking the purchase of upgrades.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    If the stand input is enabled, player can press the
+                    <strong>E key</strong> to begin the purchase process. The
+                    process first checks if the player has enough points to buy
+                    the upgrade. If enough points are available, the cost is
+                    deducted from the players points total and the upgrade is
+                    applied.
+                  </p>
+                  <p style="margin-bottom: 0.5em">
+                    After a purchase is successfully made, the price of the
+                    upgrade is doubled and the text render is updated to display
+                    the new price. Increasing the price after each purchase
+                    creates a simple scaling progression system that prevents
+                    the player from becoming overpowered and thus keeping the
+                    game interesting.
+                  </p>
+                  <img
+                    src="images/UpgradeFlowChart.png"
+                    alt="Upgrade check flow chart"
+                    style="
+                      width: 50%;
+                      height: auto;
+                      margin-top: auto;
+                      margin-left: auto;
+                      margin-right: auto;
+                      display: block;
+                    "
+                  />
                   <div
                     style="
                       position: relative;
