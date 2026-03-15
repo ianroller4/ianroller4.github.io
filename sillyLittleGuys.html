@@ -81,12 +81,12 @@
               <section style="margin-bottom: 1em">
                 <h4>Silly Little Guys</h4>
                 <p class="system-summary">
-                  In a game where the amount of things the player can interact
-                  with is minimal, the Silly Little Guys act as your doorway to
-                  interacting with the world. Silly Little Guys can be commanded
-                  to do a variety of tasks such as: attacking enemies, carrying
-                  objects, taking down walls, and solving puzzles simply by
-                  throwing them at the problem.
+                  In a game where the number of ways the player can interact
+                  with the world is minimal, the Silly Little Guys are your
+                  doorway to interacting with the world. Silly Little Guys can
+                  be commanded to do a variety of tasks such as: attacking
+                  enemies, carrying objects, taking down walls, and solving
+                  puzzles simply by throwing them at the problem.
                 </p>
                 <section style="margin-bottom: 1em">
                   <h5>Design Goals</h5>
@@ -118,7 +118,7 @@
                       target="_blank"
                       >The Wild at Heart</a
                     >. I grew up playing RTS games and this variation of the
-                    genre grabbed my attention in particular. In this variation
+                    genre particularly grabbed my attention. In this variation
                     the perspective shifts from a bird eye view to the
                     perspective of the player character. This results in a
                     feeling of acting as a general on the front lines rather
@@ -400,10 +400,10 @@
                   <h5>Implementation</h5>
                   <p style="font-size: 0.9em; margin-bottom: 0.5em">
                     The buttons themselves are a simple collision trigger that
-                    upon a player or Silly Little Guy entering will set the
-                    state of the button to pressed and add the button to the
-                    pressed order list, and upon exiting the area the button
-                    will be unpressed and be removed from the list.
+                    once a player or Silly Little Guy enters the state of the
+                    button will change to a pressed state and the button is
+                    added to the pressed order list. Upon exiting the area the
+                    button will be unpressed and be removed from the list.
                   </p>
                   <p style="font-size: 0.9em; margin-bottom: 0.5em">
                     To check the players solution the pressed list is compared
@@ -419,11 +419,11 @@
               <section style="margin-bottom: 1em">
                 <h4>What Went Well</h4>
                 <p style="margin-bottom: 0.5em">
-                  This project, in my opinion, went very well. As a team we made
-                  a complete game with a beginning, middle, and end. We have an
-                  opening and ending cutscene, while there are a few bugs none
-                  are game breaking, and overall at the end of the day everyone
-                  you played it had fun. Beyond game related things my team
+                  This project went very well. As a team we made a complete game
+                  with a beginning, middle, and end. We have an opening and
+                  ending cutscene, while there are a few bugs none are game
+                  breaking, and overall at the end of the day everyone you
+                  played it had fun. Beyond game related aspects, the team
                   worked well together. All of our personalites meshed together,
                   communication was easy, and we had fun working together.
                 </p>
@@ -432,38 +432,46 @@
               <section style="margin-bottom: 1em">
                 <h4>Challenges</h4>
                 <p style="margin-bottom: 0.5em">
-                  Overall things went smoothly, however, I would say there were
-                  two main problems we had to overcome.
+                  Overall the project went smoothly, but did have two challenges
+                  to overcome.
                 </p>
                 <p style="margin-bottom: 0.5em">
-                  The first problem came from using GitHub for game development
-                  with more than one person. I had experience before with using
+                  The first came from using GitHub for game development with
+                  more than one person. I had experience before with using
                   GitHub for a team project but I had yet to experience working
                   on a project with binary assets. For non programmers, binary
                   assets are files whose changes GitHub cannot properly handle
                   when merging. These are files such as scenes or prefabs. So
                   over the course of development we had multiple merge conflicts
-                  that were, to be it nicely, annoying to fix.
+                  that were, to be it nicely, annoying to fix. To fix these
+                  merge conflicts we would have to compare the files causing the
+                  conflicts and decide which was more important and delete the
+                  other.
                 </p>
                 <p style="margin-bottom: 0.5em">
-                  The next challenge was due to over ambitiousness. As a team we
-                  kept on coming up with new ideas that we thought would make
-                  our game the best game ever. However, we often got distracted
-                  by these ideas and were left scrambling near the deadline
-                  trying to complete the base features we needed because we had
-                  worked on the shiny new ideas first instead.
+                  The next challenge was due to the team being over ambitious.
+                  As a team we kept on coming up with new ideas that we thought
+                  would make our game the best game ever. However, we often got
+                  distracted by these ideas and were left scrambling near the
+                  deadline trying to complete the base features we needed
+                  because we had worked on the shiny new ideas first instead.
+                  This could have been handled better by creating an
+                  <i>if time allows</i> list that could be revisted once the
+                  base features and mechanics were implemented.
                 </p>
               </section>
 
               <section style="margin-bottom: 1em">
                 <h4>What I Learned</h4>
                 <p style="margin-bottom: 0.5em">
-                  Looking back I think the biggest take away form this project
-                  is to focus on getting the base features done first. Coming up
+                  Looking back I think the biggest take away from this project
+                  is to focus on completing the base features first. Coming up
                   with new mechanics and features is great but they should be
                   put on the <i>if time allows</i> list. This way you at least
                   have a game and are not scrambling trying to just get a
-                  working game completed like we were.
+                  working game completed like we were. Pushing the limit is
+                  always a good way to strive for a better game, but could come
+                  at the cost of having a functional product.
                 </p>
               </section>
 
@@ -473,22 +481,28 @@
                   If development of Silly Little Guys were to be continued there
                   are a few areas I would like to improve upon. The first area
                   is fixing the small bugs that as one of the developers I know
-                  are there but player might not notice. Secondly, is refining
-                  the tutorial for how to play the game as some players forgot
+                  where they are but players may not notice. Secondly, is
+                  refining the tutorial for how to play the game. In watching
+                  people play the game I noticed some players forgot the
                   mechanics or just did not read instructions and thus needed
-                  extra verbal explanations on how to play. Thirdly, I while I
-                  think the concept behind the button puzzle is good I do not
-                  think it is the solution is clear enough and the buttons can
-                  sometimes malfuction (the Silly Little Guys can push each
-                  other and will sometimes push each other off the button). The
-                  final improvement would be to the Silly Little Guys. I would
-                  really like to spend some time developing a better navigation
-                  system for them.
+                  extra verbal explanations on how to play. Thridly, I would
+                  like to add more feedback to the button puzzle and make the
+                  environmental hints clearer. The final improvement would be to
+                  the Silly Little Guys. I would really like to spend some time
+                  developing a better navigation system for them.
                 </p>
               </section>
             </section>
             <section style="margin-bottom: 1em">
-              <h3>Play It Now!</h3>
+              <ul class="actions">
+                <li>
+                  <a
+                    href="https://iridium4.itch.io/silly-little-guys"
+                    class="button"
+                    >Play It Now!</a
+                  >
+                </li>
+              </ul>
             </section>
           </article>
         </div>
