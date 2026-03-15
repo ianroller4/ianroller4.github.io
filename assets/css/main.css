@@ -3060,4 +3060,25 @@ ul.social li a.fa-google-plus:hover {
     color: #555;
     margin-bottom: 1em;
   }
+
+  .custom-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 0;
+  }
+
+  .custom-social li {
+    list-style: none;
+  }
+
+  .custom-social a {
+    font-size: 1.5em;
+  }
+
+  #footer {
+    margin-top: 2em;
+  }
 }
